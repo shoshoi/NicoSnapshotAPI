@@ -1,7 +1,8 @@
 require 'httpclient'
 
-class ApiNico
+class NicoSnapshotApi
   def initialize
+    @version = "v2"
     @endpoint = 'https://api.search.nicovideo.jp/api/v2/snapshot/video/contents/search'
     @user_agent = "nico-api"
     @client = HTTPClient.new
@@ -38,5 +39,5 @@ class ApiNico
   end
 end
 
-api = ApiNico.new
+api = NicoSnapshotApi.new
 puts api.search_keyword("ゲーム")
